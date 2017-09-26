@@ -1,0 +1,90 @@
+#default_view:
+#  view: yes
+#  icon: mdi:home
+#  entities:
+#    - group.synologydsm
+#    - group.ring
+#    - group.linksys_smart
+
+synologydsm:
+  name: DiskStationJN01
+  entities:
+    - sensor.network_up
+    - sensor.network_down
+#   - sensor.memory_usage_real
+#   - sensor.average_disk_temp_volume_1
+#   - sensor.below_min_remaining_life_sda
+#   - sensor.below_min_remaining_life_sdb
+#   - sensor.below_min_remaining_life_sdc
+#   - sensor.below_min_remaining_life_sdd
+#   - sensor.cpu_load_15_min
+#   - sensor.cpu_load_1_min
+#   - sensor.cpu_load_5_min
+#   - sensor.cpu_load_other
+#   - sensor.cpu_load_system
+    - sensor.cpu_load_total
+#   - sensor.cpu_load_user
+#   - sensor.device_sda
+#   - sensor.device_sdb
+#   - sensor.device_sdc
+#   - sensor.device_sdd
+#   - sensor.exceeded_max_bad_sectors_sda
+#   - sensor.exceeded_max_bad_sectors_sdb
+#   - sensor.exceeded_max_bad_sectors_sdc
+#   - sensor.exceeded_max_bad_sectors_sdd
+    - sensor.maximum_disk_temp_volume_1
+#   - sensor.memory_available_real
+#   - sensor.memory_available_swap
+#   - sensor.memory_cached
+#   - sensor.memory_size
+    - sensor.memory_total_real
+#   - sensor.memory_total_swap
+#   - sensor.memory_usage_real_2
+#   - sensor.status_sda
+#   - sensor.status_sdb
+#   - sensor.status_sdc
+#   - sensor.status_sdd
+#   - sensor.status_smart_sda
+#   - sensor.status_smart_sdb
+#   - sensor.status_smart_sdc
+#   - sensor.status_smart_sdd
+    - sensor.status_volume_1
+#   - sensor.temperature_sda
+#   - sensor.temperature_sdb
+#   - sensor.temperature_sdc
+#   - sensor.temperature_sdd
+    - sensor.total_size_volume_1
+    - sensor.type_volume_1
+    - sensor.used_space_volume_1
+    - sensor.volume_used_volume_1
+
+ring:
+  name: Ring Doorbell
+  entities:
+    - sensor.ring_front_door_battery
+    - sensor.ring_front_door_last_activity
+    - sensor.ring_front_door_last_ding
+    - sensor.ring_front_door_last_motion
+    - sensor.ring_front_door_volume
+
+linksys_smart:
+  name: Router Device List
+  entities:
+    - device_tracker.android
+    - device_tracker.brn008077dc735f
+    - device_tracker.cisco26504
+    - device_tracker.diskstationjn01
+    - device_tracker.esp_05b1e9
+    - device_tracker.jerry_ness_mac_mini
+    - device_tracker.jerrys_macbook_pro
+    - device_tracker.linux
+    - device_tracker.linux_2
+    - device_tracker.lpvdv1
+    - device_tracker.rachioc6781f
+    - device_tracker.roku_bedroom
+    - device_tracker.roku_bedroom_
+    - device_tracker.roku_living_room
+    - device_tracker.thermostat6598eb
+    - device_tracker.thermostat659d65
+    - device_tracker.w10682nf72
+    - device_tracker.wicedip

@@ -1,0 +1,139 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: 33.0856
+  longitude: -96.6116
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 190
+  # metric for Metric, imperial for Imperial
+  unit_system: imperial
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: America/Chicago
+  # Customization file
+  customize: !include customize.yaml
+
+# Show links to resources in log and frontend
+# introduction:
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+http:
+  # Uncomment this to add a password (recommended!)
+    api_password: Fonajowo1
+  # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+  # base_url: example.duckdns.org:8123
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+
+# Track the sun
+sun:
+
+# Weather prediction
+sensor:
+  - platform: yr
+  - platform: ring
+    monitored_conditions:
+      - battery
+      - last_activity
+      - last_ding
+      - last_motion
+      - volume
+  - platform: synologydsm
+    host: 10.93.96.113
+    username: jness
+    password: jness
+    monitored_conditions:
+      - memory_real_usage
+      - cpu_other_load  #Displays unspecified load in percentage.
+      - cpu_user_load #Displays user load in percentage.
+      - cpu_system_load #Displays system load in percentage.
+      - cpu_total_load #Displays combined load in percentage.
+      - cpu_1min_load #Displays maximum load in past minute.
+      - cpu_5min_load #Displays maximum load in past 5 minutes.
+      - cpu_15min_load #Displays maximum load in past 15 minutes.
+      - memory_real_usage # Displays percentage of memory used.
+      - memory_size #Displays total size of memory in MB.
+      - memory_cached #Displays total size of cache in MB.
+      - memory_available_swap #Displays total size of available swap in MB.
+      - memory_available_real #Displays total size of memory used (based on real memory) in MB.
+      - memory_total_swap #Displays total size of actual memory in MB.
+      - memory_total_real #Displays total size of real memory in MB.
+      - network_up #Displays total up speed of network interfaces (combines all interfaces).
+      - network_down #Displays total down speed of network interfaces (combines all interfaces).
+#     - disk_name #Displays the name of the hard disk (creates a new entry for each disk).
+      - disk_device #Displays the path of the hard disk (creates a new entry for each disk).
+      - disk_smart_status #Displays the S.M.A.R.T status of the hard disk (creates a new entry for each disk).
+      - disk_status #Displays the status of the hard disk (creates a new entry for each disk).
+      - disk_exceed_bad_sector_thr #Displays true / false to indicate if the hard disk exceeded the maximum bad sector threshold (creates a new entry for each disk).
+      - disk_below_remain_life_thr #Displays true / false to indicate if the hard disk dropped below the remain life threshold (creates a new entry for each disk).
+      - disk_temp #Displays the temperature of the hard disk (creates a new entry for each disk, uses the unit_system to display in C or F).
+      - volume_status #Displays the status of the volume (creates a new entry for each volume).
+      - volume_device_type #Displays the volume type (RAID, etc) (creates a new entry for each volume).
+      - volume_size_total #Displays the total size of the volume in GB’s (creates a new entry for each volume).
+      - volume_size_used #Displays the used space on this volume in GB’s (creates a new entry for each volume).
+      - volume_percentage_used #Displays the percentage used for this volume in GB’s (creates a new entry for each volume).
+      - volume_disk_temp_avg #Displays the average temperature of all disks in the volume (creates a new entry for each volume).
+      - volume_disk_temp_max #Displays the maximum temperature of all disks in the volume (creates a new entry for each volume).
+
+# Text to speech
+tts:
+  - platform: google
+
+#Ring Doorbell
+ring:
+  username: jerryness@gmail.com
+  password: Fountain24CS
+
+#Rachio Sprinkler
+switch:
+  - platform: rachio
+    access_token: 4e7fe121-d252-4a51-80bc-a86b9304a312
+
+#ROKU
+media_player:
+  - platform: roku
+    host: 10.93.96.147
+    host: 10.93.96.148
+
+climate:
+  - platform: radiotherm
+    host:
+      - 10.93.96.132
+      - 10.93.96.149
+device_tracker:
+  - platform: linksys_smart
+    host: 10.93.96.231
+
+panel_iframe:
+  router:
+    title: 'Router'
+    url: 'http://10.93.96.231'
+    icon: mdi:router-wireless
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
