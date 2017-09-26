@@ -1,0 +1,7 @@
+Group:
+  Default view:
+    view: yes
+    entities:
+     - group.Ring
+     - group.synology
+
