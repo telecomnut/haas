@@ -5,7 +5,7 @@
 #    - group.synologydsm
 #    - group.ring
 #    - group.linksys_smart
-
+     - group.
 synologydsm:
   name: DiskStationJN01
   entities:
