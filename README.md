@@ -1,2 +1,2 @@
 # haas
-Home Assistant Automatoin
+Home Assistant Automation
